@@ -11,26 +11,26 @@ DataTables是一款jquery表格插件。它是一个高度灵活的工具，可�
 ### 例子
 html
 
-   	<table id="example" class="display" cellspacing="0" width="100%">
-    <thead>
-     <tr>
-      <th></th>
-      <th>序号</th>
-      <th>标题</th>
-      <th>连接</th>
-     </tr>
-    </thead>
-    <tbody></tbody>
-    <tfoot>
-     <tr>
-      <th></th>
-      <th>序号</th>
-      <th>标题</th>
-      <th>连接</th>
-     </tr>
-    </tfoot>
-    <!-- tbody是必须的 -->
-   	</table>
+     	<table id="example" class="display" cellspacing="0" width="100%">
+      <thead>
+       <tr>
+        <th></th>
+        <th>序号</th>
+        <th>标题</th>
+        <th>连接</th>
+       </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+       <tr>
+        <th></th>
+        <th>序号</th>
+        <th>标题</th>
+        <th>连接</th>
+       </tr>
+      </tfoot>
+      <!-- tbody是必须的 -->
+     	</table>
 
 js
 
