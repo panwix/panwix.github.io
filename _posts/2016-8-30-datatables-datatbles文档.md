@@ -11,27 +11,27 @@ DataTables是一款jquery表格插件。它是一个高度灵活的工具，可�
 ### 例子
 html
 
-   	<table id="example" class="display" cellspacing="0" width="100%"> 
-    <thead> 
-     <tr> 
-      <th></th> 
-      <th>序号</th> 
-      <th>标题</th> 
-      <th>连接</th> 
-     </tr> 
-    </thead> 
-    <tbody></tbody> 
-    <tfoot> 
-     <tr> 
-      <th></th> 
-      <th>序号</th> 
-      <th>标题</th> 
-      <th>连接</th> 
-     </tr> 
-    </tfoot> 
-    <!-- tbody是必须的 --> 
+   	<table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+     <tr>
+      <th></th>
+      <th>序号</th>
+      <th>标题</th>
+      <th>连接</th>
+     </tr>
+    </thead>
+    <tbody></tbody>
+    <tfoot>
+     <tr>
+      <th></th>
+      <th>序号</th>
+      <th>标题</th>
+      <th>连接</th>
+     </tr>
+    </tfoot>
+    <!-- tbody是必须的 -->
    	</table>
-   	
+
 js
 
 	/*Javascript代码片段*/
@@ -114,9 +114,9 @@ js
 	$("#redraw").click(function() {
     var url = table.api().ajax.url("http://www.gbtags.com/gb/networks/uploads/a	7bdea3c-feaf-4bb5-a3bd-f6184c19ec09/newData.txt");
     url.load();
-	}); 
-	
-	
+	});
+
+
 ### 自定义Dom显示
 * I - Length changing 每页显示多少条数据选项
 * f - Filtering input 搜索框
@@ -135,8 +135,8 @@ example：
     	$('#example').dataTable( {
         	"dom": '<"top"i>rt<"bottom"flp><"clear">'
     	} );
-	} ); 
-	  	
+	} );
+
 ### 滚动条
 	$(document).ready(function() {
      $('#example').dataTable( {
@@ -145,7 +145,7 @@ example：
          "jQueryUI": true
      } );
  	} );
- 	
+
 ### 分页样式
 通过pagingType选项来配置分页样式
 
@@ -162,14 +162,14 @@ example：
 	6. scrolling: 页面切换时带有滚动的动画效果 //cdn.datatables.net/plug-ins/1.10.12/pagination/scrolling.js 使用方法： "sPaginationType": "scrolling"
 	7. select: 显示选择的行号 //cdn.datatables.net/plug-ins/1.10.12/pagination/select.js
 	8. simple_numbers_no_ellipses: 和simple_numbers一样但是没有省略号 //cdn.datatables.net/plug-ins/1.10.12/pagination/simple_numbers_no_ellipses.js
-	
+
 ### 状态保存
 `stateSave: true`   
 `stateSaveCallback: true`数据为异步加载  
 `stateLoadCallback:true`数据为一部家在
 `stateDuration: 4`设置时间
 
-### 功能启用／禁用	
+### 功能启用／禁用
 		paging: false,
 		ordering: false,
 		info: false
@@ -178,11 +178,11 @@ example：
 		scrollY: 200px,
 		scrollCollapse: true,
 		paging: false
-		
+
 ### 水平滚动条
 		srcollX: true
 		css样式中可以加入th,td{white-space: nowrap;}
-		
+
 ### 复杂表头
 		表头可以在html中的<th>标签中设置rowspan＝‘2’colspan＝‘2’ 这样来设置
 
@@ -190,7 +190,7 @@ example：
 		$(document).ready(function() {
   			$('table.display').dataTable();
 		} );
-		
+
 ### 排序
 	columnDefs: [ {
       targets: [ 0 ],
@@ -205,13 +205,13 @@ example：
 
 ### 表格自适应
 	html中添加width： 100%
-	
+
 ### 国际化数字显示
 	"language": {
      	"decimal":",",
        	"thousands":"."
     }
-    
+
 ### 语言国际化
 	"language": {
     	"lengthMenu": "每页 _MENU_ 条记录",
@@ -220,17 +220,17 @@ example：
         "infoEmpty": "无记录",
         "infoFiltered": "(从 _MAX_ 条记录过滤)"
      }
-     
+
 ### 隐藏列
     {
     	"targets": [ 2 ],
         "visible": false,
         "searchable": false
-     }, 
-     
+     },
+
 ### 默认排序
 	"order": [[ 3, "desc" ]]
-	
+
 ### 监听DataTables内置事件
 	var eventFired = function(type) {
         var n = $('#demo_info')[0];
@@ -241,17 +241,17 @@ example：
     function() {
         eventFired('排序');
     })
-    
+
 ### 点击行获取数据
 	$(document).ready(function() {
     var table = $('#example').DataTable();
-     
+
     $('#example tbody').on('click', 'tr', function () {
         var data = table.row( this ).data();
         alert( 'You clicked on '+data[0]+'\'s row' );
     } );
 	} );            
-	
+
 ### 列渲染
 	"columnDefs": [{
     	"render": function(data, type, row) {
@@ -259,7 +259,7 @@ example：
         },
         "targets": 0
     }   		
-    
+
 ### 行创建回调
 	$(document).ready(function() {
     $('#example').dataTable( {
@@ -270,9 +270,9 @@ example：
         }
     } );
 	} );
-	
+
 ## 四种数据源
-	1. ajax获取数据： 
+	1. ajax获取数据：
 	2. DOM作为数据源
 	3. javascript数组
 	4. 从服务器获取数据 ： 在服务器模式下，所有的分页，搜索，排序等操作，Datatables都会交给服务器去处理	    
