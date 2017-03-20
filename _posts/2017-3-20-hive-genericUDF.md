@@ -8,7 +8,7 @@ fullview: true
 
 # 开发继承GenericUDf的UDF
 
-### 简述
+### 一、简述
 继承org.apache.hadoop.hive.ql.udf.generic.GenericUDF之后，需要重写几个重要的方法：<br>
 
 `public void configure(MapredContext context){}`<br>
@@ -27,7 +27,7 @@ fullview: true
 `public void close(){}`
 //可选，执行关闭操作
 
-### initialize方法
+### 二、initialize方法
 initialize方法在sql调用udf函数中，首先被调用，它完成下面4件事
 
 1. 验证输入的类型是否预期输入
@@ -54,7 +54,7 @@ initialize方法在sql调用udf函数中，首先被调用，它完成下面4件
 	返回List<String>类型`return ObjectInspectorFactory.getStandardListObjectInspector( PrimitiveObjectInspectorFactory.writableStringObjectInspector );`<br>
 	返回字符串类型`return PrimitiveObjectInspectorFactory.writableStringObjectInspector`
 
-### evaluate方法：处理函数从输入到输出的逻辑，返回函数处理预期结果的值
+### 三、evaluate方法：处理函数从输入到输出的逻辑，返回函数处理预期结果的值
 1. 将输入值，声明局部变量通过initialize方法判断合法的变量存储。
 2. 处理函数逻辑，将输入通过代码逻辑得到结果并返回。hive中的变量类型与java中的变量类型相匹配：
 
@@ -63,9 +63,13 @@ initialize方法在sql调用udf函数中，首先被调用，它完成下面4件
 	array<> | ArrayList<>  
 	struct<> | Object
 
-### getDisplayString方法
+### 四、getDisplayString方法
 1. 用于explain sql的时候，方便查看其返回的格式
 2. 类似于java的toString方法 	
+
+### 五、样例
+输入["{\"a\":1}","{\"a\":3}"]
+输出["{\"a\":1_new}","{\"a\":3_new}"]
 
 ```
 package yscredit.udf;
