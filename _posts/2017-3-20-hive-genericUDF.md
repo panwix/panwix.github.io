@@ -1,6 +1,6 @@
 ---
 layout: post
-title: udf开发
+title: 开发继承GenericUDf的UDF
 categories:  大数据平台架构
 tags: [hive]
 fullview: true
